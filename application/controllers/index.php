@@ -10,4 +10,9 @@ class Index extends CI_Controller
 				$this->load->view('index/index');
 	        }
 
+	        public function pendaftar()
+	        {
+				$this->load->view('index/pendaftar');
+	        }
+
 }

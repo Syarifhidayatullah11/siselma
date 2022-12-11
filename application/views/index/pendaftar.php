@@ -132,11 +132,7 @@
         </div>
       </div>
 
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-
-      <h2>Section title</h2>
-      <div class="table-responsive">
-      </div>
+      <div id="pendaftar" ></div>
     </main>
   </div>
 </div>
@@ -146,5 +142,74 @@
 
       <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
       <script src="<?= base_url('public') ?>/lib/hichart/code/highcharts.js"></script>
+      <script>
+          // Data retrieved from https://netmarketshare.com
+Highcharts.chart('pendaftar', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Browser market shares in May, 2020'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
+        }
+    },
+    series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        data: [{
+            name: 'Chrome',
+            y: 70.67,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'Edge',
+            y: 14.77
+        },  {
+            name: 'Firefox',
+            y: 4.86
+        }, {
+            name: 'Safari',
+            y: 2.63
+        }, {
+            name: 'Internet Explorer',
+            y: 1.53
+        },  {
+            name: 'Opera',
+            y: 1.40
+        }, {
+            name: 'Sogou Explorer',
+            y: 0.84
+        }, {
+            name: 'QQ',
+            y: 0.51
+        }, {
+            name: 'Other',
+            y: 2.6
+        }]
+    }]
+});
+      </script>
+
   </body>
 </html>
+
+
