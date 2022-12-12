@@ -176,12 +176,12 @@ Highcharts.chart('pendaftar', {
         name: 'Brands',
         colorByPoint: true,
         data: [{
-            name: 'Chrome',
+            name: 'Manajemen',
             y: 70.67,
             sliced: true,
             selected: true
         }, {
-            name: 'Edge',
+            name: 'Sistem Infomasi',
             y: 14.77
         },  {
             name: 'Firefox',
